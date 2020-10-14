@@ -2,7 +2,7 @@
 
 function uptrend($data){
 
-	$result = ['uptrend' => false, 'downtrend' => false, 'index' => -1];
+	$message = ['uptrend' => false, 'downtrend' => false, 'index' => -1];
 
 	$checker = 0;
 
@@ -16,21 +16,21 @@ function uptrend($data){
 
 		if ($checker === 3){
 
-			$result['uptrend'] = true;
+			$message['uptrend'] = true;
 
-			$result['index'] = $iterationVariable - 2;
+			$message['index'] = $iterationVariable - 2;
 
 			break;
 		}
 	}
 
-	return $result;
+	return $message;
 
 }
 
 function downtrend($data){
 
-	$result = ['uptrend' => false, 'downtrend' => false, 'index' => -1];
+	$message = ['uptrend' => false, 'downtrend' => false, 'index' => -1];
 
 	$checker = 0;
 
@@ -44,15 +44,15 @@ function downtrend($data){
 
 		if ($checker === 3){
 
-			$result['downtrend'] = true;
+			$message['downtrend'] = true;
 
-			$result['index'] = $iterationVariable -2;
+			$message['index'] = $iterationVariable -2;
 
 			break;
 		}
 	}
 
-	return $result;
+	return $message;
 
 }
 
@@ -82,10 +82,10 @@ function checkTrend($j=null){
 
 
 
-$testData = [32, 12, 11, 15, 11, 9, 10, 8, 11, 5, 1];
+$testData = [21, 78, 41, 15, 71, 49, 40, 18, 11, 5, 1];
 
-$result = checkTrend($testData);
+$message = checkTrend($testData);
 
-print_r($result);
+var_dump($message);
 
 ?>
