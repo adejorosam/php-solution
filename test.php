@@ -12,12 +12,10 @@ function encrypt(String $sentence){
     $sentenceToLower = strtolower($sentence);
     $encrypted_text = "";
 
-    $sentenceToLower  = 'acdc';
-
     for ($i = 0; $i < strlen($sentenceToLower); $i++) {
         // If we find the character in our mapping array, use the mapped character.
-        // If not, let's use the sente$sentenceToLower character.
-        $encrypted .= array_key_exists($sentenceToLower[$i], $chars) 
+        // If not, let's use the original character
+            $encryptedText .= array_key_exists($sentenceToLower[$i], $chars) 
             ? $chars[$sentenceToLower[$i]]
             : $sentenceToLower[$i];
     }        
